@@ -1,0 +1,9 @@
+.successMessage{
+    color: blue;
+    background-color: coral;
+}
+
+.successError{
+    color:red;
+    background-color: seagreen;
+}
