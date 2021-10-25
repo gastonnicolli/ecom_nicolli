@@ -1,5 +1,5 @@
 import React from 'react'
-import ItemCount from '../itemCount/ItemCount'
+import ItemCount from '../../componets/itemCount/ItemCount'
 
 const ItemListContainer = ({greeting}) => {
     return (
