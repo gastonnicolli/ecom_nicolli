@@ -10,7 +10,6 @@ const ItemDetailContainer = ({product}) => {
                     <ItemDetail key={product.id} {... product}/>
                 </div>
             </div>
-            
         </div>
     )
 }

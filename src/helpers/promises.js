@@ -11,7 +11,7 @@ export const promises = (products,setMessage ,setIsSuccess, setIsFinished, setIs
     productsResponse
     .then((result) => {
         console.log(result);
-        setMessage(`Result is correct ${JSON.stringify(result)}`);
+        // setMessage(`Result is correct ${JSON.stringify(result)}`);
         setIsSuccess(true);
         setcurrentProducts(result);
         }

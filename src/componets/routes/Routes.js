@@ -1,13 +1,10 @@
 import React from "react";
-import BrowserRouter from "react-router-dom/BrowserRouter";
-import Switch from "react-router/Switch";
-import Route from "react-router-dom/Route";
+import { BrowserRouter, Switch, Route } from "react-router-dom";
 import NavBar from "../nav-bar/NavBar";
 import CartContainer from "../../container/cartContainer/cartContainer";
-import ItemListContainer from "../../container/itemListContainer";
+import ItemListContainer from "../../container/itemListContainer/ItemListContainer";
 import NotFound from "../../layouts/notFound/NotFound";
-import Inicio from "../inicio/Inicio"
-import Concejos from "../concejos/Concejos"
+import ItemDetailContainer from "../../container/itemDetailContainer/ItemDetailContainer";
 
 const Routes = () => {
     return (
@@ -15,13 +12,13 @@ const Routes = () => {
         <NavBar />
         <Switch>
           <Route exact path="/">
-            <Inicio />
-          </Route>
-          <Route exact path="/productos">
             <ItemListContainer />
           </Route>
-          <Route path="/concejos">
-            <Concejos />
+          <Route exact exact path="/category/:categoryId">
+            <ItemListContainer />
+          </Route>
+          <Route path="/item/:itemId">
+            <ItemDetailContainer />
           </Route>
           <Route path="/cart">
             <CartContainer />
