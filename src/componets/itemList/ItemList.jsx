@@ -1,6 +1,5 @@
 import React, {useState, useEffect} from 'react'
 import { Container } from 'react-bootstra';
-import ItemDetailContainer from '../../container/itemDetailContainer/ItemDetailContainer';
 import { promises } from '../../helpers/promises';
 import "./ItemList.css"
 
@@ -25,7 +24,7 @@ const ItemList = ({products}) => {
             {isFinished && <h2>Se ha finalizado la repuesta</h2>}
             <Container fluid>
                 {currentProducts.map((product) => (
-                    <ItemDetailContainer key={products.id} {...product} />
+                    <Item key={products.id} {...product} />
                 ))}
             </Container>
         </div>

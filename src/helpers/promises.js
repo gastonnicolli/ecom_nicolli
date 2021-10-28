@@ -3,7 +3,7 @@ export const promises = (products,setMessage ,setIsSuccess, setIsFinished, setIs
         //Synchronous code
         setTimeout(() => {
             resolve(products);
-        }, 3000);
+        }, 2000);
         
         // reject("This petition is rejected");
     });

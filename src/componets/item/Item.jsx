@@ -17,7 +17,6 @@ const Item = ({id, name, description, stock}) => {
                     <Card.Img variant="top" src={ Cereal } alt="Avatar"/>
                     <Card.Text><strong>ID: </strong>{id}</Card.Text>
                     <Card.Text><strong>Name: </strong>{name}</Card.Text>
-                    <Card.Text><strong>Description: </strong>{description}</Card.Text>
                     <Card.Text><strong>Stock: </strong>{stock}</Card.Text>
                     <hr/>
                     <div>

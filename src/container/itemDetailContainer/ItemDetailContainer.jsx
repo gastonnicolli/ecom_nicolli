@@ -1,5 +1,5 @@
 import React from 'react'
-import Item from '../../componets/item/Item'
+import ItemDetail from '../../componets/itemDetail/ItemDetail'
 import 'bootstrap/dist/css/bootstrap.min.css'
 
 const ItemDetailContainer = ({product}) => {
@@ -7,7 +7,7 @@ const ItemDetailContainer = ({product}) => {
         <div className="container">
             <div className="row">
                 <div className="col-md-4">
-                    <Item key={product.id} {... product}/>
+                    <ItemDetail key={product.id} {... product}/>
                 </div>
             </div>
             
