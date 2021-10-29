@@ -1,4 +1,4 @@
-export const promises = (products,setMessage ,setIsSuccess, setIsFinished, setIsLoading, setcurrentProducts) =>{
+export const getProducts = (products,setMessage ,setIsSuccess, setIsFinished, setIsLoading, setcurrentProducts) =>{
     const productsResponse = new Promise((resolve, reject) => {
         //Synchronous code
         setTimeout(() => {

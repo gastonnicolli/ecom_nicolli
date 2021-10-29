@@ -1,10 +1,8 @@
 import { useState } from "react";
-import "./ItemCount.css";
+import "./itemCount.css";
 
-const stock = 25;
 
-const ItemCount = () => {
-    const [count, setCount] = useState(1);
+const ItemCount = ({count, setCount, stock}) => {
 
     const increment = () => {
       setCount((c) =>(c === stock) ? c=stock : (c + 1));
@@ -16,7 +14,7 @@ const ItemCount = () => {
     return (
       <div className="counter-container">
         <button onClick={increment}> + </button>
-        <h4>Cantidad seleccionada: {count}</h4>
+        <h4>Cantidad: {count}</h4>
         <button onClick={decrement}> - </button>
       </div>
     );

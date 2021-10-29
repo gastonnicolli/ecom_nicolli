@@ -1,11 +1,15 @@
-import './App.css';
+import React from 'react';
+// import {CartContext} from './context/cartContext';
 import Routes from "./componets/routes/Routes"
-
+import './App.css';
 function App() {
   return (
-    <div className="App">
-      <Routes />
-    </div>
+      <div className="App">
+        {/* <CartContext.Provider value={[]}> */}
+          <Routes />
+        {/* </CartContext.Provider> */}
+      </div>
+    
   );
 }
 

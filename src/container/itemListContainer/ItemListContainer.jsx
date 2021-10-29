@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import ItemList from '../../componets/itemList/ItemList'
-import {promises} from '../../helpers/promises';
+import {getProducts} from '../../helpers/getProducts';
 import {products} from '../../data/products'
 import '../container.css'
 
@@ -13,7 +13,7 @@ const ItemListContainer = () => {
 
     useEffect(() => {
         if(products){
-            promises(products,setMessage ,setIsSuccess, setIsFinished, setIsLoading, setcurrentProducts )
+            getProducts(products,setMessage ,setIsSuccess, setIsFinished, setIsLoading, setcurrentProducts )
         }
     }, [products])
 
