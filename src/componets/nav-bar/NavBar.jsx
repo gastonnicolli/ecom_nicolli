@@ -21,7 +21,7 @@ const NavBar = () => {
               </NavLink>
             </Nav.Link>
             <Nav.Link>
-              <NavLink exact to="/cart" activeClassName="selected">
+              <NavLink exact to="/cartContainer" activeClassName="selected">
                 Carrito de compras
               </NavLink>
             </Nav.Link>

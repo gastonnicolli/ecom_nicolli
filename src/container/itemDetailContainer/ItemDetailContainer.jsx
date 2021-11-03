@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams } from "react-router-dom";
 import {getProduct} from '../../helpers/getProduct';
 import {products} from '../../data/products'
-import '../container.css'
+import './ItemDetailContainer.css'
 import ItemDetail from '../../componets/itemDetail/ItemDetail';
 
 
@@ -26,9 +26,7 @@ const ItemDetailContainer = ({id}) => {
             <h1>Detalle de Producto</h1>
             <h3 className={isSuccess ? "successMessage" : "successError"}>{message}</h3>
             {isLoading && <h2>Loading ....</h2>}
-            <div>
-                <ItemDetail key={currentProduct.id} {... currentProduct}/>
-            </div>
+            <ItemDetail key={currentProduct.id} {... currentProduct}/>
         </div>
     )
 }

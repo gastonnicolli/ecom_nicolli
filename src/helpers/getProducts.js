@@ -10,7 +10,6 @@ export const getProducts = (products,setMessage ,setIsSuccess, setIsFinished, se
 
     productsResponse
     .then((result) => {
-        console.log(result);
         // setMessage(`Result is correct ${JSON.stringify(result)}`);
         setIsSuccess(true);
         setcurrentProducts(result);

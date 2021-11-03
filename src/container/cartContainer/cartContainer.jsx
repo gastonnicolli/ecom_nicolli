@@ -1,13 +1,17 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import {CartContext} from '../../context/cartContext'
 import Cart from '../../componets/cart/Cart'
 
-const cartContainer = () => {
+const CartContainer = () => {
+    const {items}=useContext(CartContext);
+    console.log('items',items)
+
     return (
         <div>
             <h1>CartContainer</h1>
-            <Cart />
+            { (items.length > 0) ? <Cart items={items} /> : <h4>Cart sin Items</h4>}
         </div>
     )
 }
 
-export default cartContainer
+export default CartContainer
