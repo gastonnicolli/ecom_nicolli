@@ -1,6 +1,9 @@
-.navbar {
-    background-color: green;
-  }
-  .selected {
-    color: grey;
-  }
+#navbar {
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+}
+
+.selected {
+  color: grey;
+}

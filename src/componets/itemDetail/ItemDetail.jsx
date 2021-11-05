@@ -20,6 +20,7 @@ const ItemDetail = ({id, name, description, stock, price}) => {
     }
     
     return (
+        
         <Card style={{ width: '18rem' }}>
             <Card.Body>
                 <Card.Title>

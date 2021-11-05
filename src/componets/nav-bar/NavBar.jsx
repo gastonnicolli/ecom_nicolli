@@ -1,17 +1,21 @@
-import React from "react";
-import { Navbar, Container, Nav, NavDropdown} from "react-bootstrap";
+import React, {useContext} from "react";
+import { Navbar, Container, Nav, NavDropdown, Button} from "react-bootstrap";
 import { Link, NavLink } from "react-router-dom";
+import { CartContext } from '../../context/cartContext';
 import "./NavBar.css";
 
 import CartWidget from "../cartWidget/CartWidget";
 
 const NavBar = () => {
+  const {data}=useContext(CartContext)
   return (
-    <Navbar className="navbar" bg="light" expand="lg">
+    <Navbar id='navBar' className="navbar navbar-nav-scroll" bg="light" expand="lg">
       <Container>
+        
         <Navbar.Brand>
-        <Link to="/">Tienda EcoNutrición</Link>
+          <Link to="/">Tienda EcoNutrición</Link>
         </Navbar.Brand>
+        
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
@@ -21,7 +25,7 @@ const NavBar = () => {
               </NavLink>
             </Nav.Link>
             <Nav.Link>
-              <NavLink exact to="/cartContainer" activeClassName="selected">
+              <NavLink exact to="/cart" activeClassName="selected">
                 Carrito de compras
               </NavLink>
             </Nav.Link>
@@ -50,8 +54,16 @@ const NavBar = () => {
             </NavDropdown>
           </Nav>
         </Navbar.Collapse>
-        <CartWidget quantity={3} />
+        {data.user 
+          ? <Button onClick={data.logout}>Cerrar Sesión</Button>
+          : <Button onClick={data.login}>Iniciar Sesión</Button>
+        }
+        <Navbar.Brand>
+          {data.user ? `Hola ${data.user.name}` : 'Bienvenid@'}
+        </Navbar.Brand>
+        <CartWidget />
       </Container>
+      
     </Navbar>
   );
 };

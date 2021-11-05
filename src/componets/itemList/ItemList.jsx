@@ -5,10 +5,14 @@ import "./ItemList.css"
 
 const ItemList = ({products}) => {
     return (
-        <div>
-            {products.map((product) => (
-                <Item key={product.id} {...product} />
-            ))}
+        <div className='container'>
+            <div className='row'>
+                {products.map((product) => (
+                    <div className='col-md-4 m-2'>
+                        <Item key={product.id} {...product} />
+                    </div>
+                ))}
+            </div>
         </div>
     )
 }

@@ -9,7 +9,8 @@ import { Link } from 'react-router-dom';
 const Item = ({id, name, description, stock}) => {
     return (
         <>
-            <Card style={{ width: '20rem', margin:'10px' }}>
+            {/* style={{ width: '20rem', margin:'10px' }} */}
+            <Card >
                 <Card.Body>
                     <Card.Title>
                         Component Item

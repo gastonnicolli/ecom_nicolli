@@ -3,6 +3,8 @@ import ItemList from '../../componets/itemList/ItemList'
 import {getProducts} from '../../helpers/getProducts';
 import {products} from '../../data/products'
 import './ItemListContainer.css'
+import Spinner from '../../componets/spinner/Spinner'
+
 
 const ItemListContainer = () => {
     const [message, setMessage] = useState("");
@@ -21,7 +23,7 @@ const ItemListContainer = () => {
         <div >
             <h1>Lista de productos</h1>
             <h3 className={isSuccess ? "successMessage" : "successError"}>{message}</h3>
-            {isLoading && <h2>Loading ....</h2>}
+            {isLoading && <Spinner />}
             <div className='custom-container'>
                 <ItemList products={currentProducts}></ItemList>
             </div>

@@ -5,6 +5,7 @@ import {getProduct} from '../../helpers/getProduct';
 import {products} from '../../data/products'
 import './ItemDetailContainer.css'
 import ItemDetail from '../../componets/itemDetail/ItemDetail';
+import Spinner from '../../componets/spinner/Spinner'
 
 
 const ItemDetailContainer = ({id}) => {
@@ -25,8 +26,10 @@ const ItemDetailContainer = ({id}) => {
         <div className='custom-container'>
             <h1>Detalle de Producto</h1>
             <h3 className={isSuccess ? "successMessage" : "successError"}>{message}</h3>
-            {isLoading && <h2>Loading ....</h2>}
+            {isLoading && <Spinner />}
+            
             <ItemDetail key={currentProduct.id} {... currentProduct}/>
+
         </div>
     )
 }
