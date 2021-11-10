@@ -1,3 +1,6 @@
+import React from "react";
+import { getFirestore } from "../firebase/firebase";
+
 export const getProducts = (products,setMessage ,setIsSuccess, setIsFinished, setIsLoading, setcurrentProducts) =>{
     const productsResponse = new Promise((resolve, reject) => {
         //Synchronous code

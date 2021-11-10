@@ -3,3 +3,10 @@
     border: grey;
     border-width: 1px;
 }
+
+.card-img-top {
+    height: 180px;
+    object-fit: cover;
+    transform: scale(1);
+    transition: all 0.2s ease-in-out;
+  }

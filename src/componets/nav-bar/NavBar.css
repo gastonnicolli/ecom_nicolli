@@ -1,9 +1,13 @@
 #navbar {
-    position: fixed;
-    width: 100%;
-    z-index: 1000;
+  color: white;
+  opacity: 1;
+  background-color: rgb(233, 84, 32);
 }
 
 .selected {
   color: grey;
+}
+
+.NavLink{
+  color: white;
 }

@@ -11,9 +11,9 @@ const CartItem = ({id, name, description, price, count}) => {
 
     return (
         <div className="row">
-            <div className="col-1">{id}</div>
+            <div className="col-2">{id}</div>
             <div className="col-2">{name}</div>
-            <div className="col-2">{description}</div>
+            {/* <div className="col-2">{description}</div> */}
             <div className="col-2">{price}</div>
             <div className="col-1">{count}</div>
             <div className="col-1">

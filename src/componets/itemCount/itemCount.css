@@ -6,11 +6,17 @@
   }
 
   #increment{
-    background-color: rgb(135, 194, 196);
+    background-color: rgb(90, 39, 231);
+    border-radius: 50%;
+    text-align: center;
+    font-weight: bold;
   }
 
   #decrement{
-    background-color:rgb(196, 124, 139);
+    background-color:rgb(240, 17, 17);
+    border-radius: 50%;
+    text-align: center;
+    font-weight: bold;
   }
   h4{
     padding-right: 10px;

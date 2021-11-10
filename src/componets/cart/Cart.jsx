@@ -1,13 +1,28 @@
+import { useState } from 'react';
 import { Button } from 'react-bootstrap';
+import { FinishShopping } from '../finishShopping/FinishShopping';
 import CartItem from './CartItem'
 
+const buyer = {
+    name: 'Federico Delarosa',
+    email: 'fdelarosa@email.com',
+    phone: '+5493513458794'
+}
+
 const Cart = ({items}) => {
+    const [buy, setbuy] = useState()
     let total=0;
     let cant =0;
     Object.entries(items).forEach(([key, value]) => {
         total += parseInt(value.count)  * value.item.price;
         cant += parseInt(value.count);
     })
+
+    const handleComprar = () => {
+        const finishShopping = {buyer, items, total}
+        setbuy(finishShopping)
+        console.log('Compra: ', finishShopping)
+    };
 
     return (
         <>
@@ -16,14 +31,13 @@ const Cart = ({items}) => {
                 <p>Products in Cart: {items.length.toString()}</p>
                 <p>Items in Cart: {cant}</p>
                 <div className="row">
-                <div className="col-1 text-primary">Id</div>
+                <div className="col-2 text-primary">Id</div>
                 <div className="col-2 text-primary">Name</div>
-                <div className="col-2 text-primary">Description</div>
                 <div className="col-2 text-primary">Price</div>
                 <div className="col-1 text-primary">Quantity</div>
                 
                 {items.map((currentItem) =>
-                    <CartItem id={currentItem.item.id}
+                    <CartItem key={currentItem.item.id} id={currentItem.item.id}
                             name={currentItem.item.name}
                             description={currentItem.item.description}
                             price={currentItem.item.price}
@@ -35,8 +49,9 @@ const Cart = ({items}) => {
                 <h3>Total Compra: $ {total}</h3>
             </div>
             <div >
-                <Button variant='success'>Comprar</Button>
+                <Button onClick={handleComprar} variant='success'>Comprar</Button>
             </div>
+            {buy && <FinishShopping buyer={buyer} items={items} total={total} />}
         </>
     )
 }
