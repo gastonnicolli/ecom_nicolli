@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Button } from 'react-bootstrap';
+import AddOrderUpdateStock from '../../firebase/AddOrderUpdateStock';
 import { FinishShopping } from '../finishShopping/FinishShopping';
 import CartItem from './CartItem'
 
@@ -21,7 +22,7 @@ const Cart = ({items}) => {
     const handleComprar = () => {
         const finishShopping = {buyer, items, total}
         setbuy(finishShopping)
-        console.log('Compra: ', finishShopping)
+        let newId = AddOrderUpdateStock({buyer, items, total})
     };
 
     return (
@@ -41,6 +42,7 @@ const Cart = ({items}) => {
                             name={currentItem.item.name}
                             description={currentItem.item.description}
                             price={currentItem.item.price}
+                            stock={currentItem.stock}
                             count={currentItem.count}/>
                     )}
                 </div>

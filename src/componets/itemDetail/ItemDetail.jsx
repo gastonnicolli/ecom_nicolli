@@ -22,7 +22,7 @@ const ItemDetail = ({id, name, description, stock, price, imageUrl}) => {
     const [count, setCount] = useState(1);
     const {addItem}=useContext(CartContext);
     const handleAddItem = () => {
-        const item = {name, description, price, id, imageUrl};
+        const item = {name, description, price, id, imageUrl, stock};
         addItem({item,count});
     }
     

@@ -2,7 +2,7 @@ import React, { useContext } from 'react'
 import { Button } from 'react-bootstrap'
 import { CartContext } from '../../context/cartContext'
 
-const CartItem = ({id, name, description, price, count}) => {
+const CartItem = ({id, name, description, price, count, stock}) => {
     const {removeItem} = useContext(CartContext)
 
     const handleRemoveItem = (idItem) => {
