@@ -22,7 +22,7 @@ const ItemListContainer = () => {
         setProducts,
         categoryId,
       );
-  }, [products]);
+  }, [categoryId]);
 
   return (
     <div>

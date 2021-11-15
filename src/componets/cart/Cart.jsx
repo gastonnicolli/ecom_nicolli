@@ -11,7 +11,11 @@ const buyer = {
 }
 
 const Cart = ({items}) => {
+
+    console.log('items en Cart:  ', items);
+
     const [buy, setbuy] = useState()
+    const [newId, setNewId] = useState("") // newId despues lo mostras donde quieras
     let total=0;
     let cant =0;
     Object.entries(items).forEach(([key, value]) => {
@@ -22,8 +26,7 @@ const Cart = ({items}) => {
     const handleComprar = () => {
         const finishShopping = {buyer, items, total}
         setbuy(finishShopping)
-        let newId = AddOrderUpdateStock({buyer, items, total})
-    };
+        AddOrderUpdateStock(buyer, items, total, setNewId)};
 
     return (
         <>
@@ -38,7 +41,8 @@ const Cart = ({items}) => {
                 <div className="col-1 text-primary">Quantity</div>
                 
                 {items.map((currentItem) =>
-                    <CartItem key={currentItem.item.id} id={currentItem.item.id}
+                    <CartItem key={currentItem.item.id} 
+                            id={currentItem.item.id}
                             name={currentItem.item.name}
                             description={currentItem.item.description}
                             price={currentItem.item.price}
@@ -51,7 +55,7 @@ const Cart = ({items}) => {
                 <h3>Total Compra: $ {total}</h3>
             </div>
             <div >
-                <Button onClick={handleComprar} variant='success'>Comprar</Button>
+                <Button onClick={() => handleComprar()} variant='success'>Comprar</Button>
             </div>
             {buy && <FinishShopping buyer={buyer} items={items} total={total} />}
         </>

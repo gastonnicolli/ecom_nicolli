@@ -47,7 +47,7 @@ const ItemDetail = ({id, name, description, stock, price, imageUrl}) => {
                     </div> */}
                     <div className="row">
                         <div className="col-md-9">
-                            {(count>0) && <Button variant="primary" onClick={handleAddItem}>
+                            {(count>0) && <Button variant="primary" onClick={() => handleAddItem()}>
                                 Agregar a carrito</Button>}
                         </div>
                         <div className="col-md-3">
