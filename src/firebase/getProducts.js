@@ -1,6 +1,6 @@
 import { getFirestore } from "../firebase/firebase";
 
-export const GetProducts =(
+export const GetProducts = (
     setMessage,
     setIsSuccess, 
     setIsFinished, 

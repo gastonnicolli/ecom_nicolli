@@ -8,8 +8,6 @@ const CartContainer = () => {
 
     return (
         <Container>
-            <h1>CartContainer</h1>
-            
             { (items.length > 0) ? <Cart items={items} /> : <h4>Cart sin Items</h4> }
         </Container>
     )

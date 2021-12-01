@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons'
 import { CartContext } from '../../context/cartContext'
 import { Link } from 'react-router-dom'
+import './CartWidget.css'
 
 const cartEmpty = <FontAwesomeIcon
     className="super-crazy-colors"
@@ -24,7 +25,9 @@ const CartWidget = () => {
     return (
         <div className='d-inline-flex'>
             <div className="icon" ><Link to="/Cart" className="align-items-end">{cart}</Link></div>
-            {(quantity > 0) ? <p id="textQuatity">{quantity}</p> : null}
+            {(quantity > 0) ?
+                <span className="cart_menu_num" >{quantity}</span>
+             : null}
         </div>
     )
 }

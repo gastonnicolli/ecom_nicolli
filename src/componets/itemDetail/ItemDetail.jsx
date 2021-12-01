@@ -34,7 +34,7 @@ const ItemDetail = ({id, name, description, stock, price, imageUrl}) => {
                     <strong>{name}</strong>
                 </Card.Header>
                 <Card.Title></Card.Title>
-                <Card.Img variant="top" src={ imageUrl } alt="Avatar"/>
+                <Card.Img className="rounded-3" variant="top" src={ imageUrl } alt="Avatar"/>
                 <Card.Text><strong>ID: </strong>{id}</Card.Text>
                 <Card.Text><strong>Description: </strong>{description}</Card.Text>
                 <Card.Text><strong>Stock: </strong>{stock}</Card.Text>

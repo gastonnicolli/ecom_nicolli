@@ -1,3 +1,19 @@
 #textQuantity{
     vertical-align: bottom;
+    background-color: black;
+    color: white;
+    border-radius: 50%;
 }
+.cart_menu_num {
+    top: 0;
+    left: 55%;
+    background: red;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    padding: 4px;
+  }

@@ -7,7 +7,6 @@ export const GetProductById =
         const db = getFirestore()
         const itemCollection = db.collection('products')
         const itemById = itemCollection.doc(itemId)
-        console.log('itemById:  ', itemById)
         itemById
             .get()
             .then(document => {

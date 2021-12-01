@@ -19,8 +19,9 @@ const ItemCount = ({count, setCount, stock}) => {
             size="2x"
             // spin
             style={{ textShadow: '0 1px 0 rgba(0, 0, 0, 0.1)' }}/></Button>
-        <h4>Cantidad: {count}</h4>
-
+        <div className="item m-1">
+          <h4 className="align-items-center p-1">Cantidad: {count}</h4>
+        </div>
         <Button id="decrement" onClick={decrement}>
           <FontAwesome
             className="super-crazy-colors"

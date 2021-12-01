@@ -10,14 +10,14 @@ const CartItem = ({id, name, description, price, count, stock}) => {
     }
 
     return (
-        <div className="row">
+        <div className="row m-2">
             <div className="col-2">{id}</div>
             <div className="col-2">{name}</div>
             {/* <div className="col-2">{description}</div> */}
             <div className="col-2">{price}</div>
             <div className="col-1">{count}</div>
             <div className="col-1">
-                <Button variant="primary" onClick={() => handleRemoveItem(id)}>Eliminar</Button>
+                <Button className="btn btn-danger" onClick={() => handleRemoveItem(id)}>Eliminar</Button>
             </div>
         </div>
     )

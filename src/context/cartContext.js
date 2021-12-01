@@ -10,6 +10,7 @@ const initialUser={
 export const CartProvider = ({defaultValue = [], children}) =>{
     const [items, setItems] = useState(defaultValue)
     const [user, setUser]=useState(initialUser)
+    const [stateCart, setStateCart] = useState(false) //Si la compra se realizó el state pasa a true, una vez pagada pasa a false
 
     const addItem = (currentItem) => {
         
@@ -58,7 +59,8 @@ export const CartProvider = ({defaultValue = [], children}) =>{
             addItem, 
             removeItem, 
             isInCart, 
-            clear}}>
+            clear,
+            setStateCart}}>
                 
             {children} {/* Esta sentencia renderiza todos los children que 
             tenga CartContex.Provider envueltos*/}

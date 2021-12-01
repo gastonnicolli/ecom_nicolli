@@ -5,8 +5,6 @@ const orders = db.collection("orders");
 
 const AddOrderUpdateStock = (buyer, items, total, setNewId) => {
 
-  console.log('items en Add:  ', items);
-
   const itemsOrder = items.forEach((element) => ({
     id: element.id,
     name: element.name,
@@ -21,9 +19,6 @@ const AddOrderUpdateStock = (buyer, items, total, setNewId) => {
     // date: Date.now(),
 };
 
-  
-  console.log('items en newOrder en Add:  ', newOrder.items);
-  console.log("newOrder en add: ", newOrder);
 
   orders
   .add(newOrder)
@@ -31,14 +26,12 @@ const AddOrderUpdateStock = (buyer, items, total, setNewId) => {
       items.forEach(element => {
 
       const docRef = db.collection("products").doc(element.item.id)
-      console.log('docRef: ', docRef)
-      console.log('id??? : ', element.item.id)
       batch.update(docRef, {
         stock: element.item.stock - element.count // no estoy seguro de la estructura de tus datos, capaz no funcione así
       })
     })
-    batch.commit();
     setNewId(response.id);
+    batch.commit();
   })
   .catch((error) => console.log(error));
 }
